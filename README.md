@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Prva React App
+
+Aplikacija za evidenciju i praćenje sudjelovanja članova dobrovoljnog vatrogasnog društva na različitim aktivnostima (intervencijama, vježbama, dežurstvima, akcijama čišćenja, itd.). 
+
+Autorova prva samostalna React aplikacija. Za login koristi Firebase (iz sigurnosnih razloga samo e-mail). Tu su, naravno, i Bootstrap, React-DOM, etc.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
