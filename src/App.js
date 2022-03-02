@@ -3,16 +3,23 @@ import Navbar from "./komponente/Navbar";
 import Prijava from "./stranice/Prijava";
 import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
 export const App = () => {
   return (
+    <React.StrictMode>
+    
       <BrowserRouter>
-      <div>
-    <Navbar />
-    <Route exact path="/"></Route>
+      <Navbar />
+      <Container className="d-flex align-items-center justify-content-center" style={{ minHeight:"100vh"}}>
+     
     <Prijava />
-    </div>
+    </Container>
     </BrowserRouter>
+    
+    </React.StrictMode>
+    
+
   )
 }
 
