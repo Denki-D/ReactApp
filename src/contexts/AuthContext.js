@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { auth } from "firebase"
 
 const AuthContext = React.createContext()
 
 export function KoristiAuth() {
-    return KoristiAuth(AuthContext)
+    return KoristiAuth(AuthContext);
 }
 
 export function AuthProvider({ children }) {
