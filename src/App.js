@@ -1,29 +1,16 @@
 import React from "react";
-import Navbar from "./komponente/Navbar";
-import Prijava from "./stranice/Prijava";
+//import Navbar from "./komponente/Navbar";
+//import Signup from "./komponente/Singup";
 import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
+import Signup from "./komponente/Signup";
 
 export const App = () => {
   return (
-    <Auth.Provider>
-    <React.StrictMode>
-    
-      <BrowserRouter>
-      <Navbar />
-      <Container className="d-flex align-items-center justify-content-center" style={{ minHeight:"100vh"}}>
-     
-    <Prijava />
-    </Container>
-    </BrowserRouter>
-    
-    </React.StrictMode>
-    
-    </Auth.Provider>
-    
-
+   // <Auth.Provider>
+   <Signup />
   )
 }
 
