@@ -1,38 +1,33 @@
-// import React, { useEffect, useState } from "react";
-// import { auth } from "firebase"
+import React, { useContext, useState, useEffect } from 'react'
+import {auth} from '../firebase'
 
-// const AuthContext = React.createContext()
+const AuthContext = React.createContext()
 
-// export function KoristiAuth() {
-//     return KoristiAuth(AuthContext);
-// }
+export function useAuth() {
+    return useContext(AuthContext)
+}
 
-// export function AuthProvider({ children }) {
-//     const [aktualniKorisnik, postaviAktualnogKorisnika] = useState()
+export  function AuthProvider({children}) {
+const [currentUser, setCurrentUser] = useState()
 
-//     function RegistrirajKorisnika(email, passwword) {
-//         return auth.createUserWithEmailAndPassword(email, passwword)
-//     }
-
-//     useEffect(()=> {
-//         const unsubscribe = auth.onAuthStateChanged(korisnik => {
-//             postaviAktualnogKorisnika(korisnik)
-//     })
-//     return unsubscribe
-//     }, [])
-
-
-//     const value = {
-//         aktualniKorisnik,
-//         RegistrirajKorisnika
-//     }
-
-//     return (
-//         <AuthContext.Provider value={value}>
-//             {children}
-//         </AuthContext.Provider>
-
-//     )
-// }
-
-// export default useAuth;
+function signup(email, password){
+auth.createUserWithEmailAndPassword(email, password)
+}
+useEffect(() => {
+const unsubscribe = auth.onAuthStateChanged (user => {
+    setCurrentUser(user)
+})
+return unsubscribe
+}, [] )
+const value = {
+    currentUser,
+    signup
+}
+  return (
+    <div>
+        <AuthContext.Provider value={value}>
+            {children}
+        </AuthContext.Provider>
+    </div>
+  )
+}
