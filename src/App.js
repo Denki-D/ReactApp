@@ -1,12 +1,11 @@
 import React from "react";
 //import Navbar from "./komponente/Navbar";
-//import Signup from "./komponente/Singup";
 import { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
+//import { BrowserRouter, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
 import Signup from "./komponente/Signup";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export const App = () => {
   return (
@@ -17,9 +16,9 @@ export const App = () => {
      <div className="w-100" style={{maxWidth: '400px'}}>
    <Router>
    <AuthProvider>
-     <Switch>
-       <Route path="/registracija" component={Signup}/>
-     </Switch>
+     <Routes>
+       <Route path="/rega" element={<Signup/>}/>
+     </Routes>
    </AuthProvider>
    </Router>
    <Signup />

@@ -1,9 +1,0 @@
-import React from 'react'
-
-function NovaAktivnost() {
-  return (
-    <div>NovaAktivnost</div>
-  )
-}
-
-export default NovaAktivnost
