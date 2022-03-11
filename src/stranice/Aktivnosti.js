@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Table } from 'react-bootstrap'
 
 function Aktivnosti() {
   return (

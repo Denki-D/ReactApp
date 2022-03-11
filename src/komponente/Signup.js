@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
+import {AuthContext} from '../contexts/AuthContext'
 
 
 export default function Signup() {
@@ -9,7 +10,7 @@ export default function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const {Signup}= useAuth()
+    const {signup}= useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
@@ -25,7 +26,7 @@ export default function Signup() {
         try {
             setError('')
             setLoading(true)
-            await Signup(emailRef.current.value, passwordRef.current.value)
+            await signup(emailRef.current.value, passwordRef.current.value)
 
         } catch {
             setError('Neuspješno kreiran račun.')

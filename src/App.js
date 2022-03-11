@@ -17,7 +17,7 @@ export const App = () => {
    <Router>
    <AuthProvider>
      <Routes>
-       <Route path="/rega" element={<Signup/>}/>
+       <Route exact path="/rega" element={<Signup/>}/>
      </Routes>
    </AuthProvider>
    </Router>
