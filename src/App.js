@@ -1,11 +1,15 @@
 import React from "react";
 //import Navbar from "./komponente/Navbar";
 import { useEffect } from "react";
-//import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter as Routes, Router, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
-import Signup from "./komponente/Signup";
+//import Signup from "./komponente/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./komponente/Login";
+import UpdateProfile from "./komponente/UpdateProfil";
+import Naslovnica from "./stranice/Naslovnica";
+import PrivateRoute from "./stranice/PrivateRoute";
 
 export const App = () => {
   return (
@@ -17,7 +21,7 @@ export const App = () => {
         <Router>
           <AuthProvider>
             <Routes>
-              <PrivateRoute exact path="/" component={Dashboard} />
+              <PrivateRoute exact path="/" component={Naslovnica} />
               <PrivateRoute path="/azuriranje" component={UpdateProfile} />
               <Route path="/prijava" component={Login} />
             </Routes>
