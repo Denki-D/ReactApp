@@ -9,22 +9,23 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export const App = () => {
   return (
-   
-   <Container classname="d-flex align-items-center 
+
+    <Container classname="d-flex align-items-center 
    justify-content-center"
-   style={{minHeight:"100vh" }}>
-     <div className="w-100" style={{maxWidth: '400px'}}>
-   <Router>
-   <AuthProvider>
-     <Routes>
-       <Route exact path="/rega" element={<Signup/>}/>
-     </Routes>
-   </AuthProvider>
-   </Router>
-   <Signup />
-    </div>
-   </Container>
-  
+      style={{ minHeight: "100vh" }}>
+      <div className="w-100" style={{ maxWidth: '400px' }}>
+        <Router>
+          <AuthProvider>
+            <Routes>
+              <PrivateRoute exact path="/" component={Dashboard} />
+              <PrivateRoute path="/azuriranje" component={UpdateProfile} />
+              <Route path="/prijava" component={Login} />
+            </Routes>
+          </AuthProvider>
+        </Router>
+      </div>
+    </Container>
+
   )
 }
 
