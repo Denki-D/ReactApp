@@ -1,7 +1,7 @@
 import React from "react";
 //import Navbar from "./komponente/Navbar";
 import { useEffect } from "react";
-import { BrowserRouter as Routes, Router, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
 //import Signup from "./komponente/Signup";
@@ -13,7 +13,6 @@ import PrivateRoute from "./stranice/PrivateRoute";
 
 export const App = () => {
   return (
-
     <Container classname="d-flex align-items-center 
    justify-content-center"
       style={{ minHeight: "100vh" }}>
