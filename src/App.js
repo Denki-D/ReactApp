@@ -13,16 +13,16 @@ import PrivateRoute from "./stranice/PrivateRoute";
 
 export const App = () => {
   return (
-    <Container classname="d-flex align-items-center 
+    <Container className="d-flex align-items-center 
    justify-content-center"
       style={{ minHeight: "100vh" }}>
       <div className="w-100" style={{ maxWidth: '400px' }}>
         <Router>
           <AuthProvider>
             <Routes>
-              <PrivateRoute exact path="/" component={Naslovnica} />
-              <PrivateRoute path="/azuriranje" component={UpdateProfile} />
-              <Route path="/prijava" component={Login} />
+              <Route exact path="/" element={<Naslovnica />}/>
+              <Route path="/azuriranje" element={<UpdateProfile />} />
+              <Route path="/prijava" element={<Login />} />
             </Routes>
           </AuthProvider>
         </Router>

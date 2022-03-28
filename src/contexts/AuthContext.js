@@ -32,4 +32,4 @@ const value = {
   )
 }
 
-export default AuthContext; //= createContext();
+export default AuthContext = createContext();
